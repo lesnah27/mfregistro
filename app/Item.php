@@ -10,11 +10,8 @@ class Item extends Model
          'name', 'codigo','marca','machine_id','description','status'
     ];
 
-
-
-        public function machine()
-
-        {
-            return $this->belongsTo(Machine::class);
-        }
+    public function machine()
+    {
+        return $this->belongsTo(Machine::class);
+    }
 }

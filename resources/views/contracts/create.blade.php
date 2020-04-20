@@ -1,46 +1,36 @@
 @extends('layouts.app')
-@section('title', 'Create Un Nuevo Contrato')
+
+@section('title', 'Create nuevo Contrato')
 
 @section('content')
     <div class="container col-md-8 col-md-offset-2">
         <div class="card mt-5">
             <div class="card-header ">
-                <h5 class="float-left">Create Un Nuevo Contrato</h5>
+                <h5 class="float-left">Crear nuevo Contrato</h5>
                 <div class="clearfix"></div>
             </div>
             <div class="card-body mt-2">
-                <form>
+                <form method="post" action="{{ url('/contracts') }}">
+                    @csrf
+
                     <fieldset>
-                        <div class="col-lg-10">
-
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="form-group">
-                                            <select class="form-control" name="customert_id" id="machine_id" >
-
-                                                    <option value="">Seleccional Cliente</option>
-
-                                              </select>
-                                         </div>
-                                    </div>
-
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <select class="form-control" name="customer_id" id="machine_id" >
+                                <option value="">Seleccione cliente</option>
+                                @foreach ($customers as $customer)
+                                <option value="{{ $customer->id }}">
+                                    {{ $customer->name }}
+                                </option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="content" class="col-lg-2 control-label">Content</label>
-                            <div class="col-lg-10">
-                                <textarea class="form-control" rows="3" id="content"></textarea>
-                                <span class="help-block">Feel free to ask us any question.</span>
-                            </div>
+                            <label for="description">Descripción del contrato</label>
+                            <textarea class="form-control" rows="3" name="description" id="description"></textarea>
                         </div>
-
                         <div class="form-group">
-                            <div class="col-lg-10 col-lg-offset-2">
-                                <button class="btn btn-default">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
+                            <button type="submit" class="btn btn-primary">Registrar contrato</button>
+                            <a href="/" class="btn btn-default">Cancelar</a>
                         </div>
                     </fieldset>
                 </form>

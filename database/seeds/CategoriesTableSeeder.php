@@ -12,21 +12,16 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'name' => 'privado'
+            'name' => 'SNS- GOBIERNO/CONTRATO'
         ]);
 
         DB::table('categories')->insert([
-            'name' => 'publico'
+            'name' => 'INSTITUCIONAL / DECENTRALIZADOS'
         ]);
 
         DB::table('categories')->insert([
-            'name' => 'Decentralizado'
+            'name' => 'HOSPITALARIA'
         ]);
-
-        DB::table('categories')->insert([
-            'name' => 'almacen'
-        ]);
-
     }
 }
 
