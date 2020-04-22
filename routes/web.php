@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 // ItemController
@@ -24,16 +23,19 @@ Route::post('/contracts/{contract}/details', 'ContractDetailController@store');
 Route::delete('/contracts/{contract}/details', 'ContractDetailController@destroy');
 
 // Averías / Afectados / Cambios de estado en general
-Route::get('/changes', 'ChangeStatusController@index');
-Route::get('/changes/create', 'ChangeStatusController@create');
-Route::post('/changes', 'ChangeStatusController@store');
+Route::get('/changes', 'StatusChangeController@index');
+Route::get('/changes/create', 'StatusChangeController@create');
+Route::post('/changes', 'StatusChangeController@store');
 
 Route::get('/customers', 'CustomerController@index'); //clientes
 Route::get('/customers/create','CustomerController@create'); //clientes/crear
 Route::post('/customers/create','CustomerController@store');
 
+// Reportes
+Route::get('/reports', 'ReportController@index');
+Route::get('/test', 'ReportController@test');
+
 /*
-Route::get('/ver_reporte', 'ReporteController@index');
 Route::get('/ver_equipo/{id}', 'ReporteController@show');
 Route::post('/ver_equipo/{id}/edit','ReporteController@update');
 */

@@ -1,47 +1,41 @@
 @extends('layouts.app')
-@section('title', 'Create Un Nuevo Estado De Equipos')
+
+@section('title', 'Registrar un cambio de estado')
 
 @section('content')
     <div class="container col-md-8 col-md-offset-2">
         <div class="card mt-5">
             <div class="card-header ">
-                <h5 class="float-left">Create Un Nuevo Estado De Equipos</h5>
+                <h5 class="float-left">Cambio de estado</h5>
                 <div class="clearfix"></div>
             </div>
             <div class="card-body mt-2">
-                <form>
+                @if (session('notification'))
+                <div class="alert alert-info">
+                    {{ session('notification') }}
+                </div>
+                @endif
+
+                <form method="POST" action="{{ ('/changes') }}">
+                    @csrf
+
                     <fieldset>
-                        <div class="col-lg-10">
-
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="form-group">
-                                            <select class="form-control" name="customert_id" id="machine_id" >
-
-                                                    <option value="">Seleccional Stado del equipo</option>
-
-                                              </select>
-                                         </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
                         <div class="form-group">
-                            <label for="content" class="col-lg-2 control-label">Content</label>
-                            <div class="col-lg-10">
-                                <textarea class="form-control" rows="3" id="content"></textarea>
-                                <span class="help-block">Feel free to ask us any question.</span>
-                            </div>
-                        </div>
-
+                            <label for="serial">Serial del Equipo</label>
+                            <input type="text" name="serial" id="serial" class="form-control" required>
+                         </div>
                         <div class="form-group">
-                            <div class="col-lg-10 col-lg-offset-2">
-                                <button class="btn btn-default">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </div>
+                            <label for="status">Nuevo estado</label>
+                            <select class="form-control" name="status" id="status" required>
+                                <option value="">Nuevo estado</option>
+                                <option value="0">Bueno</option>
+                                <option value="1">Afectado</option>
+                                <option value="2">Averiado</option>
+                            </select>
+                         </div>
+
+                         <a href="{{  url('/changes') }}" class="btn btn-default">Cancelar</a>
+                         <button type="submit" class="btn btn-primary">Registrar cambio</button>
                     </fieldset>
                 </form>
             </div>

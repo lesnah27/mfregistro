@@ -14,4 +14,9 @@ class Item extends Model
     {
         return $this->belongsTo(Machine::class);
     }
+
+    public function getStatusTextAttribute()
+    {
+        return Status::text($this->status);
+    }
 }

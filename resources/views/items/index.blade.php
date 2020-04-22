@@ -41,6 +41,7 @@
                         <th scope="col">Nombre</th>
                         <th scope="col">Código</th>
                         <th scope="col">Serial</th>
+                        <th scope="col">Estado</th>
                         <th scope="col">Acción</th>
                         </tr>
                 </thead>
@@ -51,12 +52,10 @@
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->codigo }}</td>
                         <td>{{ $item->serial }}</td>
+                        <td>{{ $item->status_text }}</td>
                         <td>
                             <a class="btn btn-primary btn-xs" href="{{ url('/items/'.$item->id.'/edit') }}">
                                 Editar item
-                            </a>
-                            <a class="btn btn-danger btn-xs" href="{{ url('/averias/'.$item->id.'/create') }}">
-                                Registrar avería
                             </a>
                         </td>
                         </td>

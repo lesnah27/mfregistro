@@ -12,4 +12,14 @@ class Customer extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function contracts()
+    {
+        return $this->hasMany(Contract::class);
+    }
+
+    public function getLastContractAttribute()
+    {
+        return $this->contracts()->orderBy('created_at')->first();
+    }
 }

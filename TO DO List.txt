@@ -1,0 +1,17 @@
+Validaciones pendientes
+---
+- Evitar que un item se asigne a más de un contrato
+- Evitar que un contrato tenga items repetidos
+- Evitar un cambio de estado hacia el mismo estado actual
+- Que un serial sea único (en tabla y como validation rule) (en edición y registro)
+- Que el registro de datos sea por usuarios
+
+Implementaciones pendientes
+---
+- Traslados de items
+- ¿Se puede cerrar un contrato?
+- ¿Qué ocurre si un item es dado de baja?
+- Que se busque un item por serial, y desde allí se envíe a Cambios de estado
+- Más tipos de reportes
+- Agrupar no sólo en base al estado también según tipo de máquina
+- Que cada cambio de estado, o registro de contratos, se asocie a un usuario responsable

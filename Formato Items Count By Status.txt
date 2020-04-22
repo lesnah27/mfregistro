@@ -1,0 +1,11 @@
+0 => array:2 [▼
+    "status" => 2
+    "count" => 2
+]
+1 => array:2 [▼
+    "status" => 3
+    "count" => 1
+]
+
+2 => 2
+3 => 1

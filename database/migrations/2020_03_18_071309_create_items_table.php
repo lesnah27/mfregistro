@@ -25,6 +25,7 @@ class CreateItemsTable extends Migration
 
             $table->string('description')->nullable();
             $table->tinyInteger('status')->default(1);
+
             $table->timestamps();
         });
     }

@@ -6,10 +6,16 @@
     <div class="container col-md-8 col-md-offset-2 mt-5">
         <div class="card">
             <div class="card-header">
-                <h5 class="float-left">Items del Contrato #{{ $contract->id }}</h5>
+                <h5 class="float-left">
+                    Contrato #{{ $contract->id }}
+                </h5>
                 <div class="clearfix"></div>
             </div>
             <div class="card-body mt-2">
+                <p>
+                    <strong>Cliente:</strong> {{ $contract->customer->name }}
+                </p>
+
                 @if (session('notification'))
                 <div class="alert alert-info">
                     {{ session('notification') }}

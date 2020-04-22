@@ -90,6 +90,7 @@
                     <a href="/customers">Clientes</a>
                     <a href="/contracts">Contratos</a>
                     <a href="/changes" title="Averías, Afectados">Cambios de estado</a>
+                    <a href="/reports" title="Averías, Afectados">Reportes</a>
                 </div>
             </div>
         </div>

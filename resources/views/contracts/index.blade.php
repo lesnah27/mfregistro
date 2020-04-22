@@ -20,6 +20,7 @@
                         <th>Cliente</th>
                         <th>Descripcion</th>
                         <th>Fecha</th>
+                        <th>Acción</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -28,6 +29,11 @@
                         <td>{{ $contract->customer_id }}</td>
                         <td>{{ $contract->description }}</td>
                         <td>{{ $contract->created_at }}</td>
+                        <td>
+                            <a href="{{ url('/contracts/'.$contract->id.'/details') }}">
+                                Ver
+                            </a>
+                        </td>
                     </tr>
                     @endforeach
                     </tbody>

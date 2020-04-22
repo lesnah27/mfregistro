@@ -15,6 +15,12 @@ class CreateStatusChangesTable extends Migration
     {
         Schema::create('status_changes', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('item_id');
+            $table->foreign('item_id')->references('id')->on('items');
+
+            $table->smallInteger('status');
+
             $table->timestamps();
         });
     }

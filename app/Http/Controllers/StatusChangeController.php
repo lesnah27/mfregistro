@@ -3,8 +3,41 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\StatusChange;
+use App\Item;
 
 class StatusChangeController extends Controller
 {
-    //
+    public function index()
+    {
+        $changes = StatusChange::all();
+        return view('changes.index', compact('changes'));
+    }
+
+    public function create()
+    {
+        return view('changes.create');
+    }
+
+    public function store(Request $request)
+    {
+        $item = Item::where('serial', $request->serial)->first();
+
+        if (!$item) {
+            $notification = 'Ningún equipo coincide con el serial indicado.';
+            return back()->with(compact('notification'));
+        }
+
+        StatusChange::create([
+            'item_id' => $item->id,
+            'status' => $request->status
+        ]);
+
+        $item->status = $request->status;
+        $item->save();
+
+        $notification = 'El cambio de estado se ha registrado correctamente.';
+        return redirect('changes')->with(compact('notification'));
+    }
+
 }
