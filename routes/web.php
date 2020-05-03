@@ -13,26 +13,26 @@ Route::patch('/items/edit/{id}/edit','ItemController@update');
 Route::get('/machines','MachineController@index');
 Route::get('/machines/{id}','MachineController@show');
 
-// Contratos
-Route::get('/contracts', 'ContractController@index');
-Route::get('/contracts/create', 'ContractController@create');
-Route::post('/contracts', 'ContractController@store');
-// Detalles de los contratos
-Route::get('/contracts/{contract}/details', 'ContractDetailController@index');
-Route::post('/contracts/{contract}/details', 'ContractDetailController@store');
-Route::delete('/contracts/{contract}/details', 'ContractDetailController@destroy');
-
 // Averías / Afectados / Cambios de estado en general
 Route::get('/changes', 'StatusChangeController@index');
 Route::get('/changes/create', 'StatusChangeController@create');
 Route::post('/changes', 'StatusChangeController@store');
 
-Route::get('/customers', 'CustomerController@index'); //clientes
-Route::get('/customers/create','CustomerController@create'); //clientes/crear
+// Clientes
+Route::get('/customers', 'CustomerController@index');
+Route::get('/customers/create','CustomerController@create');
 Route::post('/customers/create','CustomerController@store');
+
+// Asignación de items
+Route::get('/customers/{customer}/items', 'CustomerItemController@index');
+Route::post('/customers/{customer}/items', 'CustomerItemController@store');
+Route::delete('/customers/{customer}/items', 'CustomerItemController@destroy');
 
 // Reportes
 Route::get('/reports', 'ReportController@index');
+Route::get('/reports/categories/{category}', 'ReportController@byCategory');
+Route::get('/reports/general', 'ReportController@general');
+
 Route::get('/test', 'ReportController@test');
 
 /*

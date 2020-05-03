@@ -1,21 +1,16 @@
 @extends('layouts.app')
 
-@section('title', 'Detalles del Contrato #'.$contract->id)
-
 @section('content')
     <div class="container col-md-8 col-md-offset-2 mt-5">
         <div class="card">
             <div class="card-header">
                 <h5 class="float-left">
-                    Contrato #{{ $contract->id }}
+                    Cliente #{{ $customer->id}}:
+                    "{{ $customer->name }}"
                 </h5>
                 <div class="clearfix"></div>
             </div>
             <div class="card-body mt-2">
-                <p>
-                    <strong>Cliente:</strong> {{ $contract->customer->name }}
-                </p>
-
                 @if (session('notification'))
                 <div class="alert alert-info">
                     {{ session('notification') }}
@@ -47,17 +42,17 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($contract->details as $detail)
+                    @foreach ($items as $item)
                     <tr>
-                        <td>{{ $detail->item_id }}</td>
-                        <td>{{ $detail->item->serial }}</td>
-                        <td>{{ $detail->item->name }}</td>
-                        <td>{{ $detail->item->machine->modelo }}</td>
+                        <td>{{ $item->id }}</td>
+                        <td>{{ $item->serial }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->machine->modelo }}</td>
                         <td>
                             <form action="" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <input type="hidden" name="contract_detail_id" value="{{ $detail->id }}">
+                                <input type="hidden" name="item_id" value="{{ $item->id }}">
                                 <button type="submit" class="btn btn-sm btn-danger">
                                     Eliminar
                                 </button>
@@ -67,14 +62,6 @@
                     @endforeach
                     </tbody>
                 </table>
-
-                <form action="" method="POST">
-                    @csrf
-
-                    <button class="btn btn-primary btn-block" type="submit">
-                        Confirmar y cerrar contrato
-                    </button>
-                </form>
             </div>
         </div>
     </div>

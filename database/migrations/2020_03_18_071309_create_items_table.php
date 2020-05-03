@@ -26,6 +26,9 @@ class CreateItemsTable extends Migration
             $table->string('description')->nullable();
             $table->tinyInteger('status')->default(1);
 
+            $table->unsignedBigInteger('customer_id')->nullable();
+            $table->foreign('customer_id')->references('id')->on('customers');
+
             $table->timestamps();
         });
     }

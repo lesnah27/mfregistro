@@ -15,8 +15,9 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Nombre</th>
-                                <th>Gerencia Comercial</th>
-                                <th>Fecha De Creacion</th>
+                                <th>Gerencia</th>
+                                <th>Fecha de registro</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -26,6 +27,11 @@
                                 <td>{{ $customer->name }} </td>
                                 <td>{{ $customer->category->name }}</td>
                                 <td>{{ $customer->created_at }}</td>
+                                <td>
+                                    <a href="{{ url('customers/'.$customer->id.'/items') }}" class="btn btn-primary">
+                                        Asignar items
+                                    </a>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>

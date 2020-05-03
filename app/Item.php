@@ -19,4 +19,9 @@ class Item extends Model
     {
         return Status::text($this->status);
     }
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
 }

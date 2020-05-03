@@ -13,9 +13,9 @@ class Customer extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function contracts()
+    public function items()
     {
-        return $this->hasMany(Contract::class);
+        return $this->hasMany(Item::class);
     }
 
     public function getLastContractAttribute()

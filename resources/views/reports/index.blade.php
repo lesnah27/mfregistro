@@ -6,56 +6,22 @@
 <div class="container col-md-8 col-md-offset-2">
     <div class="card mt-5">
         <div class="card-header ">
-            <h5 class="float-left">Matriz</h5>
+            <h5 class="float-left">Reportes disponibles</h5>
         </div>
         <div class="card-body">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Cliente</th>
-                        <th colspan="2">Buenas</th>
-                        <th colspan="2">Afectadas en el centro</th>
-                        <th colspan="2">Averiadas en el taller</th>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        @foreach ($machines as $machine)
-                            <th>{{ $machine->modelo }}</th>
-                        @endforeach
-                        @foreach ($machines as $machine)
-                            <th>{{ $machine->modelo }}</th>
-                        @endforeach
-                        @foreach ($machines as $machine)
-                            <th>{{ $machine->modelo }}</th>
-                        @endforeach
-                    </tr>
-                </thead>
-                <tbody>
-                @foreach ($customers as $customer)
-                <tr>
-                    <td>{{ $customer->name }}</td>
-                    @foreach ($machines as $machine)
-                        <td>
-                            Estado 0
-                            Machine {{ $machine->id }}
-                        </td>
-                    @endforeach
-                    @foreach ($machines as $machine)
-                    <td>
-                        Estado 1
-                        Machine {{ $machine->id }}
-                    </td>
-                    @endforeach
-                    @foreach ($machines as $machine)
-                    <td>
-                        Estado 2
-                        Machine {{ $machine->id }}
-                    </td>
-                    @endforeach
-                </tr>
-                @endforeach
-                </tbody>
-            </table>
+            <p><strong>Reportes por gerencia:</strong></p>
+            @foreach ($categories as $category)
+                <a href="{{ url('reports/categories/'.$category->id) }}" class="btn btn-primary">
+                    {{ $category->name }}
+                </a>
+            @endforeach
+
+            <hr>
+
+            <p><strong>Reporte general:</strong></p>
+            <a href="{{ url('reports/general') }}" class="btn btn-primary">
+                Reporte resumen
+            </a>
         </div>
     </div>
 </div>

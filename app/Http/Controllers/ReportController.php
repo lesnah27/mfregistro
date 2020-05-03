@@ -4,34 +4,42 @@ namespace App\Http\Controllers;
 
 use App\Machine;
 use App\Customer;
-use App\Contract;
+use App\Category;
+
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
     public function index()
     {
-        $customers = Customer::all();
+        $categories = Category::all();
+
+        return view('reports.index', compact('categories'));
+    }
+
+    public function byCategory(Category $category)
+    {
+        $customers = $category->customers;
         $machines = Machine::all();
 
-        foreach ($customers as $customer) {
-            if ($customer->lastContract) {
-                $customer->counts = $customer->lastContract->getItemsCountByStatus();
-            } else {
-                $customer->counts = [
-                    0, 0, 0
-                ];
-            }
+        foreach ($customers as $customer)
+            $customer->counts = [
+                0, 0, 0
+            ];
 
-        }
+        return view('reports.category', compact('customers', 'machines', 'category'));
+    }
 
-        // dd($customers);
-        return view('reports.index', compact('customers', 'machines'));
+    public function general()
+    {
+        $categories = Category::all();
+        $machines = Machine::all();
+
+        return view('reports.general', compact('categories', 'machines'));
     }
 
     public function test()
     {
-        $c = Contract::find(1);
-        dd($c->getItemsCountByStatus());
+        // dd($c->getItemsCountByStatus());
     }
 }

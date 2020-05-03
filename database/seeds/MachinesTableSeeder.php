@@ -15,13 +15,13 @@ class MachinesTableSeeder extends Seeder
         DB::table('machines')->insert([
               'name' => 'Bomba de infusión',
               'marca' => 'Baxter',
-              'modelo' => 'Colleague Cx1',
+              'modelo' => '1 Canal',
         ]);
 
         DB::table('machines')->insert([
             'name' => 'Bomba de infusión',
             'marca' => 'Baxter',
-            'modelo' => 'Colleague Cx3',
+            'modelo' => '3 Canales',
         ]);
     }
 }

@@ -13,9 +13,9 @@ class Category extends Model
         return $this->hasMany(Customer::class);
     }
 
-    public function getItemsByStatus()
+    // [3, 7, 12] devuelva la lista de los ids de los clientes asociados
+    public function getCustomerIdsAttribute()
     {
-        // category -> customers -> contracts -> details -> items
-
+        return $this->customers()->pluck('id');
     }
 }

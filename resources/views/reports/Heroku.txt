@@ -1,0 +1,38 @@
+Heroku
+
+AWS -> EC2 (1 año)
+
+Digital Ocean (2 meses)
+
+--
+
+vista recibe $machines
+foreach ($machines as $machine)
+
+Item::where('machine_id', $machine->id) ...
+
+Item
+queryScope -> method -> scopeMachine($value)
+retun $this->where('machine_id', $machine->id);
+
+Item::machine($machine->id) ...
+
+App\Item::where('status', 0)
+    ->where('machine_id', $machine->id)
+    ->whereNotNull('customer_id')
+    ->count();
+
+App\Item::status(App\Status::GOOD)
+    ->machine($machine->id)
+    ->assigned()
+    ->count();
+
+--
+
+DB::table('nombre_tabla')->where(...)
+
+Eloquent -> ORM
+object relational mapping
+
+Modelo::where(...)
+protected  $table = '';
