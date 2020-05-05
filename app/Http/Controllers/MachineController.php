@@ -71,7 +71,7 @@ class MachineController extends Controller
         return redirect('/create')->with( 'Your ticket has been created! Its unique id is: ');
         // return redirect(action('ReporteController@edit', $machine->id))->with('status'.$id. 'The ticket ');
 
-        dd($id);
+        //dd($id);
     }
 
     public function destroy($id)

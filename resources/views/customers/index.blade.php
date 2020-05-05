@@ -9,7 +9,11 @@
                 <div class="clearfix"></div>
             </div>
             <div class="card-body mt-2">
-
+                    <p>
+                        <a href="{{  url('/customers/create') }}" class="btn btn-primary">
+                            Agregar Nuevo Cliente
+                        </a>
+                    </p>
                     <table class="table">
                         <thead>
                             <tr>

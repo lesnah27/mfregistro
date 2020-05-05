@@ -24,15 +24,24 @@ class ItemController extends Controller
 
     public function store(Request $request)
     {
+       // ddd($request);
+         
         Item::create([
             'name' => $request->get('name'),
-            'machine_id' => $request->get('machine_id'),
-            'serial' => $request->get('serial'),
             'codigo' => $request->get('codigo'),
+            'serial' => $request->get('serial'),
+            'machine_id' => $request->get('machine_id'),
             'description' => $request->get('description')
-        ]);
+
+
+        ]); 
+       
+    
+
+     //   $Item->save();
 
         return redirect('items.create')->with('status', 'Nuevo item registrado.');
+       
     }
 
     public function show($id)

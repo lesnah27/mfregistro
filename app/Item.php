@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
     protected $fillable = [
-         'name', 'codigo','marca','machine_id','description','status'
+         'name', 'codigo','marca','machine_id','description','status','serial'
     ];
 
     public function machine()

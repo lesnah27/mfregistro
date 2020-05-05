@@ -31,9 +31,11 @@
 
                        <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
+                                <p>
+                        <a href="{{  url('/customers') }}" class="btn btn-primary">
+                            Agregar Nuevo Cliente
+                        </a>
+                    </p>
                             </div>
 
 

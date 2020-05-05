@@ -5,7 +5,7 @@
     <div class="container col-md-8 col-md-offset-2 mt-5">
         <div class="card">
             <div class="card-header ">
-                <h5 class="float-left">Machine</h5>
+                <h5 class="float-left">Registro De Marca y Modelos </h5>
                 <div class="clearfix"></div>
             </div>
             <div class="card-body mt-2">

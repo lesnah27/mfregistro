@@ -4,7 +4,7 @@
 
 @section('content')
 
-
+<h1>Hola</h1>
 <form  method="post" >
             @csrf
 
@@ -17,7 +17,7 @@
         <div class="col-md-9 register-right">
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <h3 class="register-heading">Crear Registro De  [Item]</h3>
+                    <h3 class="register-heading">Crear Registro De Equipos Medicos</h3>
                     <table class="table table-bordered" >
                         <tbody>
                            <td>Datos Del Equipo:  </td>
@@ -43,8 +43,9 @@
                                                         <div class="input-group-prepend">
                                                             <div class="input-group-text"><i class="fa fa-user-edit text-info">Codigo</i></div>
                                                         </div>
-                                                        <input type="text" class="form-control" id="codigo" name=""
-                                                        placeholder="Codigo"  value="">
+                                                        <input type="text" class="form-control" id="codigo" name="codigo"
+                                                        placeholder="Codigo" >
+                                                    
                                                     </div>
                                                 </div>
                                             </div>
@@ -58,8 +59,8 @@
                                                     <div class="input-group-prepend">
                                                         <div class="input-group-text"><i class="fa fa-user-edit text-info">Serial</i></div>
                                                     </div>
-                                                    <input type="text" class="form-control" id="serial" name="serial"
-                                                    placeholder="Serial"  value="">
+                                                     <input type="text" class="form-control" id="numero_serial" name="serial"
+                                                        placeholder="serial" >
                                                 </div>
                                             </div>
                                         </div>

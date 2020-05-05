@@ -20,9 +20,8 @@ class CreateItemsTable extends Migration
             $table->foreign('machine_id')->references('id')->on('machines');
 
             $table->string('name')->nullable();
-            $table->string('codigo')->nullable(); // código de inventario alfanumérico
-            $table->string('serial')->nullable(); // alfanumérico
-
+            $table->string('codigo')->nullable()->unique();
+            $table->string('serial')->nullable()->unique();
             $table->string('description')->nullable();
             $table->tinyInteger('status')->default(1);
 

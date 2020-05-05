@@ -16,6 +16,11 @@
                             class="form-control mr-sm-2"
                             type="search" placeholder="Serial" value="{{ $serial }}">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                             
+                                <a href="{{  url('/items') }}" class="btn btn-primary">
+                                    X
+                                </a>
+                             
                     </form>
                 </td>
             </tr>
@@ -24,13 +29,13 @@
 
     <div class="card mt-5">
         <div class="card-header">
-            <h5 class="float-left">Gestionar items</h5>
+            <h5 class="float-left">Listados De Equipos Medicos</h5>
             <div class="clearfix"></div>
         </div>
         <div class="card-body mt-2">
             <p>
                 <a href="{{  url('/items/create') }}" class="btn btn-primary">
-                    Agregar nuevo item
+                    Agregar nuevo Equipo
                 </a>
             </p>
 
