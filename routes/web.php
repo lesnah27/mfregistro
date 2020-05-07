@@ -28,11 +28,6 @@ Route::get('/customers', 'CustomerController@index');
 Route::get('/customers/create','CustomerController@create');
 Route::post('/customers/create','CustomerController@store');
 
-
-
-
-
-
 //Gerencias
 Route::post('/gerencias/crear','CategoryController@store');
 Route::get('/gerencias/crear','CategoryController@create');

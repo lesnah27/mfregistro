@@ -18,10 +18,10 @@ class MachineController extends Controller
 
     public function create()
     {
-        $machineid = Machine::all();
-
-       return view('machines.create',compact ('machineid','machine'));
-       //dd($machine);
+     
+         
+       return view('machines.create');
+       
     }
 
     public function store(Request $request)
@@ -45,9 +45,7 @@ class MachineController extends Controller
 
     public function edit($id)
     {
-        $machineid = Machine::all();
-        $machine = Machine::find($id);
-        return view('Reportes.edit', compact('machine','machineid'));
+      //
     }
 
     public function update(Request $request, $id)
