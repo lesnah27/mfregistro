@@ -18,6 +18,7 @@
                     <thead>
                     <tr>
                         <th>Gerencia Comercial</th>
+                        <th>Fecha De Creacion</th>
                        
                     </tr>
                     </thead>
@@ -25,6 +26,7 @@
                     @foreach ( $categ as  $categ)
                     <tr>
                         <td>{{  $categ->name }}</td>
+                        <td>{{  $categ->created_at}}</td>
                     </tr>
                     @endforeach
                     </tbody>
