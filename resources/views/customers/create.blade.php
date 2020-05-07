@@ -31,11 +31,7 @@
 
                        <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <p>
-                        <a href="{{  url('/customers') }}" class="btn btn-primary">
-                            Agregar Nuevo Cliente
-                        </a>
-                    </p>
+                                <button type="submit" class="redondo btn btn-info"><i class="fas fa-save"></i> Guardar</button>
                             </div>
 
 

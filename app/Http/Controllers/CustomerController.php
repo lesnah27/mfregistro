@@ -13,7 +13,7 @@ class CustomerController extends Controller
     public function index()
     {
         $customers = Customer::all();
-        return view('customers.index',compact('customers'));
+       return view('customers.index',compact('customers'));
     }
 
     public function create()
@@ -24,14 +24,17 @@ class CustomerController extends Controller
 
     public function store(Request $request)
     {
-        $custome = new Customer(array(
+      
+       
+            Customer::create([
             'name' => $request->get('name'),
             'category_id' => $request->get('category_id'),
-        ));
+         
+        ]);
 
-        $custome->save();
-
-        return redirect('/nuevo_cliente')->with('status', 'Nuevo Cliente Registrado:');
+        return redirect('/customers')->with('status', 'Nuevo Cliente Registrado:');
+        
+       
     }
 
     public function show($id)

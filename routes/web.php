@@ -10,6 +10,8 @@ Route::post('/items/create', 'ItemController@store');
 Route::get('/items/{id}/edit','ItemController@edit');
 Route::patch('/items/edit/{id}/edit','ItemController@update');
 
+
+
 // MachineController
 Route::get('/machines','MachineController@index');
 Route::get('/machines/create','MachineController@create');
@@ -25,6 +27,11 @@ Route::post('/changes', 'StatusChangeController@store');
 Route::get('/customers', 'CustomerController@index');
 Route::get('/customers/create','CustomerController@create');
 Route::post('/customers/create','CustomerController@store');
+
+
+
+
+
 
 //Gerencias
 Route::post('/gerencias/crear','CategoryController@store');
