@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Registro De Equipos/Item</div>
-
+ 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf

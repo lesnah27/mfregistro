@@ -5,12 +5,14 @@ use Illuminate\Support\Facades\Route;
 // ItemController
 Route::get('/items', 'ItemController@index');
 Route::get('/items/create', 'ItemController@create');
+Route::get('/items/{id}show', 'ItemController@show');
 Route::post('/items/create', 'ItemController@store');
 Route::get('/items/{id}/edit','ItemController@edit');
 Route::patch('/items/edit/{id}/edit','ItemController@update');
 
 // MachineController
 Route::get('/machines','MachineController@index');
+Route::get('/machines/create','MachineController@create');
 Route::get('/machines/{id}','MachineController@show');
 
 // Averías / Afectados / Cambios de estado en general

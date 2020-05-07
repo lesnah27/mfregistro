@@ -5,8 +5,13 @@
     <div class="container col-md-8 col-md-offset-2 mt-5">
         <div class="card">
             <div class="card-header ">
-                <h5 class="float-left">Registro De Marca y Modelos </h5>
+                <h5 class="float-left">Listado De Marca y Modelos De Equipos Medicos </h5>
                 <div class="clearfix"></div>
+                <p>
+                    <a href="{{  url('/machines/create') }}" class="btn btn-primary">
+                        Agregar
+                    </a>
+                </p>
             </div>
             <div class="card-body mt-2">
                 @if ($machines->isEmpty())
@@ -16,9 +21,9 @@
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>nombre</th>
-                            <th>marca</th>
-                            <th>modelo</th>
+                            <th>Mombre</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
                         </tr>
                         </thead>
                         <tbody>

@@ -20,10 +20,11 @@ class CreateItemsTable extends Migration
             $table->foreign('machine_id')->references('id')->on('machines');
 
             $table->string('name')->nullable();
+            $table->string('modelo')->nullable();
             $table->string('codigo')->nullable()->unique();
             $table->string('serial')->nullable()->unique();
             $table->string('description')->nullable();
-            $table->tinyInteger('status')->default(1);
+            $table->tinyInteger('status')->default(0);
 
             $table->unsignedBigInteger('customer_id')->nullable();
             $table->foreign('customer_id')->references('id')->on('customers');
