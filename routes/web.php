@@ -13,6 +13,7 @@ Route::patch('/items/edit/{id}/edit','ItemController@update');
 // MachineController
 Route::get('/machines','MachineController@index');
 Route::get('/machines/create','MachineController@create');
+Route::post('/machines/create','MachineController@store');
 Route::get('/machines/{id}','MachineController@show');
 
 // Averías / Afectados / Cambios de estado en general
@@ -24,6 +25,11 @@ Route::post('/changes', 'StatusChangeController@store');
 Route::get('/customers', 'CustomerController@index');
 Route::get('/customers/create','CustomerController@create');
 Route::post('/customers/create','CustomerController@store');
+
+//Gerencias
+Route::post('/gerencias/crear','CategoryController@store');
+Route::get('/gerencias/crear','CategoryController@create');
+Route::get('/gerencias/index','CategoryController@index');
 
 // Asignación de items
 Route::get('/customers/{customer}/items', 'CustomerItemController@index');
@@ -42,8 +48,7 @@ Route::get('/ver_equipo/{id}', 'ReporteController@show');
 Route::post('/ver_equipo/{id}/edit','ReporteController@update');
 */
 /*
-Route::post('/gerencias/crear','CategoryController@store');
-Route::get('/gerencias/crear','CategoryController@create');
+
 */
 
 Route::view('/', 'welcome');

@@ -26,23 +26,15 @@ class MachineController extends Controller
 
     public function store(Request $request)
     {
-
-        $item = new Item(array(
-
-            'machine_id' => $request->get('machine_id'),
+        
+        Machine::create([
             'name' => $request->get('name'),
-            'codigo' => $request->get('codigo'),
-            'description' => $request->get('description'),
-
-
-        ));
-
-        $item->save();
-
-        return redirect('ver_reporte')->with( 'Your ticket has been created! Its unique id is: ');
-
-
-        //dd($request);
+            'marca' => $request->get('marca'),
+            'modelo' => $request->get('modelo'),
+          
+        ]);
+        return redirect('/machines')->with('status', 'Nuevo maquina registrado.');
+       
     }
 
     public function show($id)
