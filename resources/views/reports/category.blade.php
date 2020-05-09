@@ -46,7 +46,8 @@
                 <tbody>
                 @foreach ($customers as $customer)
                 <tr>
-                    <td>{{ $customer->name }}</td>
+                    <td><a href="{{ action('CustomerItemController@index', $customer->id) }}">{{$customer->name}}</a></td>
+
                     @foreach ($machines as $machine)
                         <td>
                             {{ App\Item::where('machine_id', $machine->id)->where('customer_id', $customer->id)->count() }}
@@ -86,18 +87,18 @@
                         </td>
                     @endforeach
                     @foreach ($machines as $machine)
-                    <td>
-                        <?php
-                            $goodStatusCount = App\Item::where('status', 0)->where('machine_id', $machine->id)->where('customer_id', $customer->id)->count();
-                            $totalMachineCount = App\Item::where('machine_id', $machine->id)->where('customer_id', $customer->id)->count();
+                    <?php
+                        $goodStatusCount = App\Item::where('status', 0)->where('machine_id', $machine->id)->where('customer_id', $customer->id)->count();
+                        $totalMachineCount = App\Item::where('machine_id', $machine->id)->where('customer_id', $customer->id)->count();
 
-                            if ($totalMachineCount === 0)
-                                $percentage = '-';
-                            else {
-                                $percentage = $goodStatusCount / $totalMachineCount * 100;
-                                $percentage = $percentage . ' %';
-                            }
-                        ?>
+                        if ($totalMachineCount === 0)
+                            $percentage = '-';
+                        else {
+                            $percentage = $goodStatusCount / $totalMachineCount * 100;
+                            $percentage = $percentage . ' %';
+                        }
+                    ?>
+                    <td class="{{ App\Status::background($percentage) }}">
                         {{ $percentage }}
                     </td>
                     @endforeach

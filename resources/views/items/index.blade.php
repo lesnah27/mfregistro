@@ -50,8 +50,8 @@
                             <th scope="col">Código</th>
                             <th scope="col">Estado</th>
                             <th scope="col">Acción</th>
-                            </tr>          
-                        
+                            </tr>
+
                     </thead>
                     <tbody>
                         @foreach ($items as $item)
@@ -59,7 +59,7 @@
                             <th scope="row">{{ $item->id }}</th>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->machine->marca }}</td>
-                            <td>{{ $item->modelo }}</td>
+                            <td>{{ $item->machine->modelo }}</td>
                             <td>{{ $item->serial }}</td>
                             <td>{{ $item->codigo }}</td>
                             <td><a href="{{ action('ItemController@show', $item->id) }}">{{ $item->status_text }}</a></td>
@@ -78,7 +78,7 @@
             </div>
         </div>
     </div>
-    @endsection 
-            
-                            
-                
+    @endsection
+
+
+

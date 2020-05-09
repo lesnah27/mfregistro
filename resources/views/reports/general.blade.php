@@ -44,7 +44,8 @@
                 <tbody>
                 @foreach ($categories as $category)
                 <tr>
-                    <td>{{ $category->name }}</td>
+
+                    <td>{{$category->name}}</td>
                     @foreach ($machines as $machine)
                         <td>
                             {{ App\Item::where('machine_id', $machine->id)->whereIn('customer_id', $category->customerIds)->count() }}
@@ -69,18 +70,18 @@
                         </td>
                     @endforeach
                     @foreach ($machines as $machine)
-                    <td>
-                        <?php
-                            $goodStatusCount = App\Item::where('status', 0)->where('machine_id', $machine->id)->whereIn('customer_id', $category->customerIds)->count();
-                            $totalMachineCount = App\Item::where('machine_id', $machine->id)->whereIn('customer_id', $category->customerIds)->count();
+                    <?php
+                        $goodStatusCount = App\Item::where('status', 0)->where('machine_id', $machine->id)->whereIn('customer_id', $category->customerIds)->count();
+                        $totalMachineCount = App\Item::where('machine_id', $machine->id)->whereIn('customer_id', $category->customerIds)->count();
 
-                            if ($totalMachineCount === 0)
-                                $percentage = '-';
-                            else {
-                                $percentage = $goodStatusCount / $totalMachineCount * 100;
-                                $percentage = $percentage . ' %';
-                            }
-                        ?>
+                        if ($totalMachineCount === 0)
+                            $percentage = '-';
+                        else {
+                            $percentage = $goodStatusCount / $totalMachineCount * 100;
+                            $percentage = $percentage . ' %';
+                        }
+                    ?>
+                    <td class="{{ App\Status::background($percentage) }}">
                         {{ $percentage }}
                     </td>
                     @endforeach

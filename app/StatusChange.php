@@ -18,4 +18,5 @@ class StatusChange extends Model
     {
         return Status::text($this->status);
     }
+    //esta funcion biene del modelo Status.php
 }

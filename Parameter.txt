@@ -1,0 +1,7 @@
+Parameter
+parameters
+
+id, name, value
+1, yellow, 30
+2, green, 45
+3, red, 60

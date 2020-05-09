@@ -1,0 +1,41 @@
+Application Programming Interface
+
+
+               80              90
+    rojo            amarillo         verde
+
+
+Formulario
+
+<input type="text" name="availability_red" value="">
+<input type="text" name="availability_yellow" value="">
+
+
+Controlador
+
+method edit
+
+return view('parameters.edit);
+
+
+method update
+
+Parameter::where('name', 'availability_red')
+->update([
+  'value' => $request->availability_red
+]);
+
+Parameter::where('name', 'availability_yellow')
+->update([
+  'value' => $request->availability_yellow
+]);
+
+
+---
+
+Cambiar link
+---
+
+http://mfregistro.test/items/1show
+->
+http://mfregistro.test/changes/create?item_id=1

@@ -20,7 +20,6 @@ class CreateItemsTable extends Migration
             $table->foreign('machine_id')->references('id')->on('machines');
 
             $table->string('name')->nullable();
-            $table->string('modelo')->nullable();
             $table->string('codigo')->nullable()->unique();
             $table->string('serial')->nullable()->unique();
             $table->string('description')->nullable();

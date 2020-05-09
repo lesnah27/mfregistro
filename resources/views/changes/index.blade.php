@@ -37,7 +37,7 @@
                             <td>{{ $change->id }}</td>
                             <td>{{ $change->item->serial }}</td>
                             <td>{{ $change->item->name }}</td>
-                            <td>{{ $change->item->machine->modelo }}</td>
+                            <td>{{ $change->item->modelo }}</td>
                             <td>{{ $change->created_at }}</td>
                             <td>{{ $change->status_text }}</td>
                         </tr>

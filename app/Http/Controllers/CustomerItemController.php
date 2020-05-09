@@ -12,7 +12,9 @@ class CustomerItemController extends Controller
     public function index(Customer $customer)
     {
         $items = $customer->items;
-        return view('contracts.details', compact('customer', 'items'));
+        $itemst = Item::all();
+       
+        return view('contracts.details', compact('customer', 'items','itemst'));
     }
 
     public function store(Customer $customer, Request $request)

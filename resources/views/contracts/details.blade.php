@@ -37,7 +37,8 @@
                         <th>Item</th>
                         <th>Serial</th>
                         <th>Nombre</th>
-                        <th>Tipo</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
                         <th>Acción</th>
                     </tr>
                     </thead>
@@ -47,6 +48,7 @@
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->serial }}</td>
                         <td>{{ $item->name }}</td>
+                        <td>{{ $item->machine->marca }}</td>
                         <td>{{ $item->machine->modelo }}</td>
                         <td>
                             <form action="" method="POST">
