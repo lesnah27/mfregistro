@@ -11,6 +11,7 @@ class ParametersTableSeeder extends Seeder
      *
      * @return void
      */
+    /*
     public function run()
     {
         Parameter::create([
@@ -22,5 +23,5 @@ class ParametersTableSeeder extends Seeder
             'name' => 'availability_yellow',
             'value' => 90
         ]);
-    }
+    } */
 }

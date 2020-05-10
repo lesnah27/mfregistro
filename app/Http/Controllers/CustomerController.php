@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Customer;
+use App\Parameter;
 use Illuminate\Support\Facades\DB;
 
 
@@ -13,6 +14,8 @@ class CustomerController extends Controller
     public function index()
     {
         $customers = Customer::all();
+        $parameters = Parameter ::all();
+         // ddd($parameters);
        return view('customers.index',compact('customers'));
     }
 
@@ -24,17 +27,17 @@ class CustomerController extends Controller
 
     public function store(Request $request)
     {
-      
-       
+
+
             Customer::create([
             'name' => $request->get('name'),
             'category_id' => $request->get('category_id'),
-         
+
         ]);
 
         return redirect('/customers')->with('status', 'Nuevo Cliente Registrado:');
-        
-       
+
+
     }
 
     public function show($id)

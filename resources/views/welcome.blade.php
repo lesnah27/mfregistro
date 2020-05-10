@@ -90,6 +90,7 @@
                     <a href="/changes" title="Averías, Afectados">Cambios de estado</a>
                     <a href="/reports" title="Averías, Afectados">Reportes</a>
                     <a href="/gerencias/crear" title="Averías, Afectados">Gerencias</a>
+
                 </div>
             </div>
         </div>
