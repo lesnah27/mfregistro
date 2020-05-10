@@ -23,13 +23,13 @@
                         <div class="form-group">
                             <label for="title" class="col-lg-2 control-label">Title</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" id="title" placeholder="{{$parameters->name}}" name="name">
+                                <input type="text" class="form-control" id="title" placeholder="" name="name">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="content" class="col-lg-2 control-label">Content</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" id="title" placeholder="{{$parameters2->name}}" name="value">
+                                <input type="text" class="form-control" id="value" placeholder="" name="value">
                                 <span class="help-block">Feel free to ask us any question.</span>
                             </div>
                         </div>

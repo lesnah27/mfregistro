@@ -25,9 +25,9 @@ class ParameterController extends Controller
      */
     public function create()
     {
-        $parameters = Parameter ::find(1);
+        $parameters1 = Parameter ::find(1);
         $parameters2 = Parameter ::find(2);
-        return view('parameter.create',compact('parameters','parameters2'));
+        return view('parameter.create',compact('parameters1','parameters2'));
     }
 
     /**
@@ -38,6 +38,8 @@ class ParameterController extends Controller
      */
     public function store(Request $request)
     {
+        /*
+       // dd($request);
         Parameter::create([
             'name' => 'availability_red',
             'value' => 85
@@ -47,6 +49,14 @@ class ParameterController extends Controller
             'name' => 'availability_yellow',
             'value' => 90
         ]);
+        */
+       // dd($request);
+        Parameter::create([
+            'name' => $request->get('name'),
+            'value' => $request->get('value'),
+
+        ]);
+
     }
 
     /**

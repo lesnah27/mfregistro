@@ -12,7 +12,7 @@ Route::get('/items/{id}/edit','ItemController@edit');
 Route::patch('/items/edit/{id}/edit','ItemController@update');
 
 //
-Route::get('/parameter', 'ParameterController@index');
+Route::get('/parameters', 'ParameterController@index');
 
 Route::get('/parameters/create','ParameterController@create');
 Route::post('/parameters/create','ParameterController@store');

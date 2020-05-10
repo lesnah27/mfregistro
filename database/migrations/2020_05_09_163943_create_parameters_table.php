@@ -17,7 +17,7 @@ class CreateParametersTable extends Migration
             $table->id();
 
             $table->string('name');
-            $table->float('value')->default(100);
+            $table->float('value');
 
             $table->timestamps();
         });
