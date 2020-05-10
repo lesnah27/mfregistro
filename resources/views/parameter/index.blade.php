@@ -9,19 +9,14 @@
                 <div class="clearfix"></div>
             </div>
             <div class="card-body mt-2">
-                    <p>
-                        <a href="{{  url('/customers/create') }}" class="btn btn-primary">
-                            Agregar Nuevo Cliente
-                        </a>
-                    </p>
+
                     <table class="table">
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Nombre</th>
-                                <th>Gerencia</th>
-                                <th>Fecha de registro</th>
-                                <th>Acciones</th>
+                                <th>Valor</th>
+
+
                             </tr>
                         </thead>
                         <tbody>
@@ -31,11 +26,7 @@
                                 <td>{{ $parameter->value}}</td>
                                 <td></td>
                                 <td></td>
-                                <td>
-                                    <a href="" class="btn btn-primary">
-                                        Asignar items
-                                    </a>
-                                </td>
+
                             </tr>
                         @endforeach
                         </tbody>
