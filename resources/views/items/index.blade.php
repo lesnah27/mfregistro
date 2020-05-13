@@ -3,7 +3,7 @@
 
     @section('content')
 
-    <div class="container col-md-8 col-md-offset-2">
+    <div class="container col-md-8 col-md-offset-2 mt-5">
         <table class="table table-bordered">
             <tbody>
                 <tr>
@@ -62,10 +62,10 @@
                             <td>{{ $item->machine->modelo }}</td>
                             <td>{{ $item->serial }}</td>
                             <td>{{ $item->codigo }}</td>
-                            <td><a href="{{ action('ItemController@show', $item->id) }}">{{ $item->status_text }}</a></td>
+                            <td><a href="{{ action('StatusChangeController@create', $item->id) }}">{{ $item->status_text }}</a></td>
                             <td>
                                 <a class="btn btn-primary btn-xs" href="{{-- url('/items/'.$item->id. '/edit') --}}">
-                                    Editar item
+                                    Editar Equipo
                                 </a>
                             </td>
                             </td>

@@ -16,9 +16,6 @@
                 </div>
                 @endif
 
-                <a href="{{ url('/changes/create') }}" class="btn btn-primary">
-                    Registrar cambio de estado
-                </a>
 
                 <table class="table">
                     <thead>

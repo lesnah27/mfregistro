@@ -27,9 +27,7 @@ class CustomerController extends Controller
 
     public function store(Request $request)
     {
-
-
-            Customer::create([
+             Customer::create([
             'name' => $request->get('name'),
             'category_id' => $request->get('category_id'),
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Machine;
 use App\Customer;
 use App\Category;
-
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
@@ -42,4 +42,6 @@ class ReportController extends Controller
     {
         // dd($c->getItemsCountByStatus());
     }
+
+
 }

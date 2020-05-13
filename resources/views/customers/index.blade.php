@@ -33,7 +33,7 @@
                                 <td>{{ $customer->created_at }}</td>
                                 <td>
                                     <a href="{{ url('customers/'.$customer->id.'/items') }}" class="btn btn-primary">
-                                        Asignar items
+                                        Asignar Equipo
                                     </a>
                                 </td>
                             </tr>

@@ -3,6 +3,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+Route::view('/', 'welcome')->middleware('auth');
+
 // ItemController
 Route::get('/items', 'ItemController@index');
 Route::get('/items/create', 'ItemController@create');
@@ -25,7 +30,7 @@ Route::get('/machines/{id}','MachineController@show');
 
 // Averías / Afectados / Cambios de estado en general
 Route::get('/changes', 'StatusChangeController@index');
-Route::get('/changes/create', 'StatusChangeController@create');
+Route::get('/changes/create/{id}', 'StatusChangeController@create');
 Route::post('/changes', 'StatusChangeController@store');
 
 // Clientes
@@ -50,6 +55,8 @@ Route::get('/reports/general', 'ReportController@general');
 
 Route::get('/test', 'ReportController@test');
 
+
+
 /*
 Route::get('/ver_equipo/{id}', 'ReporteController@show');
 Route::post('/ver_equipo/{id}/edit','ReporteController@update');
@@ -58,5 +65,4 @@ Route::post('/ver_equipo/{id}/edit','ReporteController@update');
 
 */
 
-Route::view('/', 'welcome');
-Auth::routes();
+

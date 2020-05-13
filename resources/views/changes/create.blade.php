@@ -22,7 +22,7 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="serial">Serial del Equipo</label>
-                            <input type="text" name="serial" id="serial" class="form-control" required>
+                            <input type="text" name="serial" id="serial" class="form-control"  placeholder="{{$item->serial}}"  value="{{$item->serial}}" >
                          </div>
                         <div class="form-group">
                             <label for="status">Nuevo estado</label>

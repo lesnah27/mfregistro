@@ -14,9 +14,10 @@ class StatusChangeController extends Controller
         return view('changes.index', compact('changes'));
     }
 
-    public function create()
+    public function create($id)
     {
-        return view('changes.create');
+        $item = Item::find($id);
+        return view('changes.create',compact('item'));
     }
 
     public function store(Request $request)

@@ -12,13 +12,14 @@ class ItemController extends Controller
     public function index(Request $request)
     {
         $serial = $request->get('serial');
-        $items = Item::where('serial','like',"%$serial%")->paginate(5);
+        $items = Item::where('serial','like',"%$serial%")->paginate(25);
         return view('items.index', compact('items', 'serial'));
     }
 
     public function create()
     {
         $machines = Machine::all();
+
         return view('items.create', compact('machines'));
     }
 
@@ -40,6 +41,7 @@ class ItemController extends Controller
     public function show($id)
     {
         $item = Item::find($id);
+
         return view('items.show', compact('item'));
     }
 
