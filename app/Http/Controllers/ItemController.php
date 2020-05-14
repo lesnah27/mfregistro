@@ -69,9 +69,13 @@ class ItemController extends Controller
         return redirect('/items')->with( 'Fue Creada De Manera Correcta La Gerencia: ');
     }
 
-    public function destroy($id)
+    public function destroy($item)
     {
-        //
+
+        $item1 = Item::find($item);
+        $item1->delete();
+
+        return redirect('/items')->with('success', 'Stock has been deleted Successfully');
     }
 
 }

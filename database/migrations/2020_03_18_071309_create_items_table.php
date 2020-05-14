@@ -16,8 +16,8 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('machine_id');
-            $table->foreign('machine_id')->references('id')->on('machines');
+            $table->unsignedBigInteger('machine_id')->nullable();
+            $table->foreign('machine_id')->references('id')->on('machines')->onDelete('cascade');
 
             $table->string('name')->nullable();
             $table->string('codigo')->nullable()->unique();
@@ -26,7 +26,7 @@ class CreateItemsTable extends Migration
             $table->tinyInteger('status')->default(0);
 
             $table->unsignedBigInteger('customer_id')->nullable();
-            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('set null');
 
             $table->timestamps();
         });

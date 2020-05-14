@@ -15,6 +15,11 @@ Route::get('/items/{id}show', 'ItemController@show');
 Route::post('/items/create', 'ItemController@store');
 Route::get('/items/{id}/edit','ItemController@edit');
 Route::patch('/items/edit/{id}/edit','ItemController@update');
+Route::delete('/items/{item}/item', 'ItemController@destroy');
+
+//Route::delete('/customers/{customer}/items', 'CustomerItemController@destroy');
+
+
 
 //
 Route::get('/parameters', 'ParameterController@index');

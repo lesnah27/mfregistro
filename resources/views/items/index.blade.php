@@ -64,10 +64,11 @@
                             <td>{{ $item->codigo }}</td>
                             <td><a href="{{ action('StatusChangeController@create', $item->id) }}">{{ $item->status_text }}</a></td>
                             <td>
-                                <a class="btn btn-primary btn-xs" href="{{-- url('/items/'.$item->id. '/edit') --}}">
-                                    Editar Equipo
-                                </a>
-                            </td>
+                                <form action="{{ action('ItemController@destroy',$item->id) }}" method="post">
+                                    {{csrf_field()}}
+                                    <input name="_method" type="hidden" value="DELETE">
+                                    <button class="btn btn-danger btn-xs" type="submit">Eliminar</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

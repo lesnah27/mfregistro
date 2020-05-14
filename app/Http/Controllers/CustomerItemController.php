@@ -13,7 +13,7 @@ class CustomerItemController extends Controller
     {
         $items = $customer->items;
         $itemst = Item::all();
-       
+
         return view('contracts.details', compact('customer', 'items','itemst'));
     }
 
@@ -42,10 +42,8 @@ class CustomerItemController extends Controller
     public function destroy(Customer $contract, Request $request)
     {
         $item = Item::find($request->item_id);
-
         $item->customer_id = null;
         $item->save();
-
         $notification = 'Item eliminado correctamente.';
         return back()->with(compact('notification'));
     }
