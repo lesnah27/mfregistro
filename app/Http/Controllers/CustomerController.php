@@ -17,12 +17,11 @@ class CustomerController extends Controller
      */
     public function index(Request $request)
     {
+
       $name = $request->get('buscarpor');
       $customers = Customer::where('name','like',"%$name%")->latest()->paginate(25);
-      return view('customers.index',compact('customers'));
-
-
-
+      $parameters = Parameter ::all();
+      return view('customers.index',compact('customers','parameters'));
     }
 
     /**

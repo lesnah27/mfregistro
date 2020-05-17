@@ -63,13 +63,22 @@
                             <td>{{ $item->serial }}</td>
                             <td>{{ $item->codigo }}</td>
                             <td><a href="{{ action('StatusChangeController@create', $item->id) }}">{{ $item->status_text }}</a></td>
-                            <td>
+
+                            <td>  <a href="{{ action('ItemController@confirm',$item->id) }}" class="btn btn-danger btncolorblanco">
+                                <i class="fa fa-trash-alt"></i> Eliminar
+                           </a>
+
+                        </td>
+
+
+
+                         <!--<td>
                                 <form action="{{ action('ItemController@destroy',$item->id) }}" method="post">
                                     {{csrf_field()}}
                                     <input name="_method" type="hidden" value="DELETE">
-                                    <button class="btn btn-danger btn-xs" type="submit">Eliminar</button>
+                                   <button class="btn btn-danger btn-xs" type="submit">Eliminar</button>
                                 </form>
-                            </td>
+                            </td> -->
                         </tr>
                         @endforeach
                     </tbody>

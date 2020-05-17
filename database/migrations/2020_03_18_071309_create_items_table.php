@@ -17,16 +17,16 @@ class CreateItemsTable extends Migration
             $table->id();
 
             $table->unsignedBigInteger('machine_id')->nullable();
-            $table->foreign('machine_id')->references('id')->on('machines')->onDelete('cascade');
+            $table->foreign('machine_id')->references('id')->on('machines');
 
             $table->string('name')->nullable();
             $table->string('codigo')->nullable()->unique();
             $table->string('serial')->nullable()->unique();
             $table->string('description')->nullable();
             $table->tinyInteger('status')->default(0);
-
+            $table->softDeletes();
             $table->unsignedBigInteger('customer_id')->nullable();
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('set null');
+            $table->foreign('customer_id')->references('id')->on('customers');
 
             $table->timestamps();
         });

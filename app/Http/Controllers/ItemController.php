@@ -73,4 +73,10 @@ class ItemController extends Controller
         return redirect('/items')->with('success', 'Stock has been deleted Successfully');
     }
 
+    public function confirm($id)
+    {
+        $itemEliminar = Item::findOrFail($id);
+        return view('items.confirm', compact('itemEliminar'));
+    }
+
 }

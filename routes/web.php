@@ -16,7 +16,7 @@ Route::post('/items/create', 'ItemController@store');
 Route::get('/items/{id}/edit','ItemController@edit');
 Route::patch('/items/edit/{id}/edit','ItemController@update');
 Route::delete('/items/{item}/item', 'ItemController@destroy');
-
+Route::get('/items/{id}/confirm','ItemController@confirm' )->name('items.confirm');
 //Route::delete('/customers/{customer}/items', 'CustomerItemController@destroy');
 
 
