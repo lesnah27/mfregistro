@@ -18,7 +18,7 @@ class CustomerController extends Controller
     public function index(Request $request)
     {
       $name = $request->get('buscarpor');
-      $customers = Customer::where('name','like',"%$name%")->paginate(25);
+      $customers = Customer::where('name','like',"%$name%")->latest()->paginate(25);
       return view('customers.index',compact('customers'));
 
 
@@ -91,7 +91,7 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //dd($id);
+
         $customers=Customer::findOrFail($id);
         $customers->name = $request->get('name');
         $customers->category_id = $request->get('category_id');

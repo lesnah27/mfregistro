@@ -13,7 +13,6 @@ class ReportController extends Controller
     public function index()
     {
         $categories = Category::all();
-
         return view('reports.index', compact('categories'));
     }
 
@@ -21,7 +20,6 @@ class ReportController extends Controller
     {
         $customers = $category->customers;
         $machines = Machine::paginate(25);
-
         foreach ($customers as $customer)
             $customer->counts = [
                 0, 0, 0

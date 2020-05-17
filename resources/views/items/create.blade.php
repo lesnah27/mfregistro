@@ -4,7 +4,7 @@
 
 @section('content')
 
-<h1>Hola</h1>
+
 <form  method="post" >
             @csrf
 

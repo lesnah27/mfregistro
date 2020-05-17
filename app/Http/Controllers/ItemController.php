@@ -12,14 +12,13 @@ class ItemController extends Controller
     public function index(Request $request)
     {
         $serial = $request->get('serial');
-        $items = Item::where('serial','like',"%$serial%")->paginate(25);
+        $items = Item::where('serial','like',"%$serial%")->latest()->paginate(25);
         return view('items.index', compact('items', 'serial'));
     }
 
     public function create()
     {
         $machines = Machine::all();
-
         return view('items.create', compact('machines'));
     }
 
@@ -41,7 +40,6 @@ class ItemController extends Controller
     public function show($id)
     {
         $item = Item::find($id);
-
         return view('items.show', compact('item'));
     }
 
@@ -49,7 +47,6 @@ class ItemController extends Controller
     {
         $item = Item::find($id);
         $machines = Machine::all();
-
         return view('items.edit', compact('item', 'machines'));
     }
 
@@ -71,10 +68,8 @@ class ItemController extends Controller
 
     public function destroy($item)
     {
-
         $item1 = Item::find($item);
         $item1->delete();
-
         return redirect('/items')->with('success', 'Stock has been deleted Successfully');
     }
 

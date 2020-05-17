@@ -49,7 +49,7 @@
                                 value="{{ old('name') }}" required autocomplete="name" autofocus>
                                 <br>
 
-                                    <select name="category_id" class="form-control" >
+                                    <select name="category_id" class="form-control" required >
                                         <option value="">--- Seleciona La Gerencia Comercial ---</option>
                                         @foreach ($category as $key => $value)
                                             <option value="{{ $key }}">{{ $value }}</option>
