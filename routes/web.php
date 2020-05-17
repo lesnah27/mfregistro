@@ -39,9 +39,14 @@ Route::get('/changes/create/{id}', 'StatusChangeController@create');
 Route::post('/changes', 'StatusChangeController@store');
 
 // Clientes
+/*
 Route::get('/customers', 'CustomerController@index');
 Route::get('/customers/create','CustomerController@create');
 Route::post('/customers/create','CustomerController@store');
+Route::get('/customers/{id}/edit','CustomerController@edit');
+*/
+
+Route::Resource('clientes', 'CustomerController');
 
 //Gerencias
 Route::post('/gerencias/crear','CategoryController@store');

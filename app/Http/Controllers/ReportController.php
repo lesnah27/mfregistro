@@ -20,7 +20,7 @@ class ReportController extends Controller
     public function byCategory(Category $category)
     {
         $customers = $category->customers;
-        $machines = Machine::all();
+        $machines = Machine::paginate(25);
 
         foreach ($customers as $customer)
             $customer->counts = [

@@ -56,7 +56,7 @@
                     <tbody>
                         @foreach ($items as $item)
                         <tr>
-                            <th scope="row">{{ $item->id }}</th>
+                            <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->machine->marca }}</td>
                             <td>{{ $item->machine->modelo }}</td>

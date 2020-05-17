@@ -8,10 +8,12 @@ use App\Item;
 
 class StatusChangeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $serial = $request->get('buscarpor');
+        $item = Item::where('serial','like',"%$serial%")->paginate(25);
         $changes = StatusChange::all();
-        return view('changes.index', compact('changes'));
+        return view('changes.index', compact('changes','item'));
     }
 
     public function create($id)

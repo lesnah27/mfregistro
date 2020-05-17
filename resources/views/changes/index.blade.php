@@ -5,6 +5,7 @@
 @section('content')
     <div class="container col-md-8 col-md-offset-2 mt-5">
         <div class="card">
+
             <div class="card-header">
                 <h5 class="float-left">Historial de cambios de estado</h5>
                 <div class="clearfix"></div>
@@ -31,7 +32,7 @@
                     <tbody>
                         @foreach ($changes as $change)
                         <tr>
-                            <td>{{ $change->id }}</td>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $change->item->serial }}</td>
                             <td>{{ $change->item->name }}</td>
                             <td>{{ $change->item->modelo }}</td>

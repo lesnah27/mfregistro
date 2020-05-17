@@ -34,7 +34,7 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Item</th>
+                        <th>#</th>
                         <th>Serial</th>
                         <th>Nombre</th>
                         <th>Marca</th>
@@ -45,7 +45,7 @@
                     <tbody>
                     @foreach ($items as $item)
                     <tr>
-                        <td>{{ $item->id }}</td>
+                        <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->serial }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->machine->marca }}</td>

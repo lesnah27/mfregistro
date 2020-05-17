@@ -12,7 +12,7 @@ class CustomerItemController extends Controller
     public function index(Customer $customer)
     {
         $items = $customer->items;
-        $itemst = Item::all();
+        $itemst = Item::paginate(25);
 
         return view('contracts.details', compact('customer', 'items','itemst'));
     }

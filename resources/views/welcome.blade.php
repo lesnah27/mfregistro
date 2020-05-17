@@ -99,7 +99,7 @@
                 <div class="links">
                     <a href="/items">Equipos</a>
                     <a href="/machines">Tipos de equipos</a>
-                    <a href="/customers">Clientes</a>
+                    <a href="/clientes">Clientes</a>
                     <a href="/changes" title="Averías, Afectados">Cambios de estado</a>
                     <a href="/reports" title="Averías, Afectados">Reportes</a>
                     <a href="/gerencias/crear" title="Averías, Afectados">Gerencias</a>
