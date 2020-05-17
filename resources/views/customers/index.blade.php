@@ -38,7 +38,7 @@
                             <tbody>
                                 @foreach($customers as $customer)
                                 <tr>
-                                    <td>{{ $customer->id }} </td>
+                                    <td>{{ $loop->iteration  }} </td>
                                     <td><a href="{{ action('CustomerController@edit', $customer->id) }}">{{ $customer->name }} </a> </td>
 
                                     <td>{{ $customer->category->name }}</td>
