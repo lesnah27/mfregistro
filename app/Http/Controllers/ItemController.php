@@ -24,7 +24,11 @@ class ItemController extends Controller
 
     public function store(Request $request)
     {
-       // ddd($request);
+        $validatedData = $request->validate([
+            'codigo' => 'required|unique:items|max:20',
+            'serial' => 'required|unique:items|max:20',
+
+        ]);
 
         Item::create([
             'name' => $request->get('name'),

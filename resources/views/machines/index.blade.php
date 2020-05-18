@@ -17,7 +17,7 @@
                 @if ($machines->isEmpty())
                     <p> There is no machine.</p>
                 @else
-                    <table class="table">
+                    <table class="table table-hover">
                         <thead>
                         <tr>
                             <th>ID</th>
