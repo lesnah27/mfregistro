@@ -15,7 +15,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categ = Category::all();
-       
+
         return view('categories.index', compact('categ'));
     }
 
@@ -26,8 +26,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        
-        
+
+
         return view('categories.create');
     }
 
@@ -41,7 +41,7 @@ class CategoryController extends Controller
     {
         Category::create([
             'name' => $request->get('name'),
-          
+
         ]);
         return redirect('/gerencias/index')->with('status', 'Nuevo Gerencia registrado.');
     }
@@ -88,6 +88,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+        return redirect('/gerencias/index')->with('success', 'Stock has been deleted Successfully');
+
     }
 }

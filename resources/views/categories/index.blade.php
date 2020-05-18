@@ -19,7 +19,8 @@
                     <tr>
                         <th>Gerencia Comercial</th>
                         <th>Fecha De Creacion</th>
-                       
+                        <th>Accion</th>
+
                     </tr>
                     </thead>
                     <tbody>
@@ -27,6 +28,13 @@
                     <tr>
                         <td>{{  $categ->name }}</td>
                         <td>{{  $categ->created_at}}</td>
+                        <td>
+                            <form action="{{action('CategoryController@destroy', $categ->id)}}" method="post">
+                             {{csrf_field()}}
+                             <input name="_method" type="hidden" value="DELETE">
+
+                             <button class="btn btn-danger btn-xs" type="submit"><span ></span>Eliminar</button>
+                           </td>
                     </tr>
                     @endforeach
                     </tbody>
@@ -35,5 +43,5 @@
         </div>
     </div>
 @endsection
-                     
-           
+
+

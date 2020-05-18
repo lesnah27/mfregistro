@@ -52,6 +52,7 @@ Route::Resource('clientes', 'CustomerController');
 Route::post('/gerencias/crear','CategoryController@store');
 Route::get('/gerencias/crear','CategoryController@create');
 Route::get('/gerencias/index','CategoryController@index');
+Route::delete('/gerencias/{id}/gerencias', 'CategoryController@destroy');
 
 // Asignación de items
 Route::get('/customers/{customer}/items', 'CustomerItemController@index');
