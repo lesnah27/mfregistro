@@ -52,6 +52,7 @@ class ItemController extends Controller
         $item = Item::find($id);
         $machines = Machine::all();
         return view('items.edit', compact('item', 'machines'));
+
     }
 
     public function update(Request $request, $id)

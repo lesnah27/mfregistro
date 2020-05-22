@@ -63,12 +63,13 @@
                             <td>{{ $item->serial }}</td>
                             <td>{{ $item->codigo }}</td>
                             <td><a href="{{ action('StatusChangeController@create', $item->id) }}">{{ $item->status_text }}</a></td>
+                            <td><a href="{{ action('ItemController@edit',$item->id) }}" class="btn btn-danger btncolorblanco">
 
-                            <td>  <a href="{{ action('ItemController@confirm',$item->id) }}" class="btn btn-danger btncolorblanco">
+                                <i class="fa fa-trash-alt"></i> Editar
+                           </a></td>
+                            <td><a href="{{ action('ItemController@confirm',$item->id) }}" class="btn btn-danger btncolorblanco">
                                 <i class="fa fa-trash-alt"></i> Eliminar
-                           </a>
-
-                        </td>
+                           </a></td>
 
 
 

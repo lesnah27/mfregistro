@@ -5,8 +5,7 @@
 @section('content')
 
 
-<form  method="post"  >
-    @method('PATCH')
+<form method="post">
             @csrf
 
 <div class="container register">
@@ -90,25 +89,7 @@
                         </table>
                         <table class="table table-bordered" >
                             <tbody>
-
-                                    <td>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                     <div class="form-group">
-                                                        <select class="form-control" name=" " id=" ">
-
-                                                            <option value="1">falla</option>
-
-                                                          </select>
-                                                     </div>
-                                            </div>
-                                        </div>
-                                    </td>
-
                                 <tr>
-
-
-
                                     <td>
                                         <div class="form-group">
                                             <label for="content" class="col-lg-2 control-label">Descripcion</label>
@@ -121,7 +102,6 @@
                             </tbody>
                         </table>
                         <button type="submit" class="redondo btn btn-info"><i class="fas fa-save"></i> Guardar</button>
-
                         </div>
                     </div>
                 </div>

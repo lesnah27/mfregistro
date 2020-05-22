@@ -13,17 +13,13 @@ Route::get('/items', 'ItemController@index');
 Route::get('/items/create', 'ItemController@create');
 Route::get('/items/{id}show', 'ItemController@show');
 Route::post('/items/create', 'ItemController@store');
-Route::get('/items/{id}/edit','ItemController@edit');
-Route::patch('/items/edit/{id}/edit','ItemController@update');
+Route::get('/items/{id}/edit','ItemController@edit')->name('items.edit');
+Route::post('/items/{id}/edit','ItemController@update');
 Route::delete('/items/{item}/item', 'ItemController@destroy');
 Route::get('/items/{id}/confirm','ItemController@confirm' )->name('items.confirm');
-//Route::delete('/customers/{customer}/items', 'CustomerItemController@destroy');
-
-
 
 //
 Route::get('/parameters', 'ParameterController@index');
-
 Route::get('/parameters/create','ParameterController@create');
 Route::post('/parameters/create','ParameterController@store');
 
