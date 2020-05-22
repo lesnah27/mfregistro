@@ -43,8 +43,8 @@
                                                         <div class="input-group-prepend">
                                                             <div class="input-group-text"><span class="fa fa-user-edit text-info">Codigo</span></div>
                                                         </div>
-                                                        <input type="text" class="form-control" id="codigo" name=""
-                                                        placeholder="{{  $item->codigo }}"  value="{{  $item->codigo }}">
+                                                        <input type="text" class="form-control" id="codigo" name="codigo"
+                                                        placeholder="{{$item->codigo}}"  value="{{$item->codigo}}">
                                                     </div>
                                                 </div>
                                             </div>
